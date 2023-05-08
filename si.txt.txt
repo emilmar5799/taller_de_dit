@@ -1,0 +1,87 @@
+namespace ejercicio 1
+
+{
+
+   internal class Program
+
+   {
+
+       static void Main(string[] args)
+
+       {
+
+           //a. Escribe un programa en C# que lea N números. Debes imprimir la cantidad de impares negativos y la cantidad de pares positivos.
+
+           int num;
+
+           num = leer("introdusca la cantidad de numeros");
+
+           iter(num);
+
+       }
+
+       public static int leer(string wrd)
+
+       {
+
+           Console.WriteLine(wrd);
+
+           int num;
+
+           num = int.Parse(Console.ReadLine());
+
+           return num;
+
+       }
+
+       public static void iter(int num)
+
+       {
+
+           int i = 0;
+
+           int contp=0, conti=0;
+
+           while (i < num)
+
+           {
+
+               int numr;
+
+               Random random = new Random();
+
+               numr = random.Next(-101, 101);
+
+              
+
+               if (numr >0 && numr %2 ==0) 
+
+               {
+
+                   contp++;
+
+               }
+
+               if (numr<0 && numr%2==-1) 
+
+               {
+
+                   conti++;
+
+               }
+
+               i++;
+
+               Console.WriteLine("numero random " + numr);
+
+           }
+
+           Console.WriteLine("la cantidad de impares negativos "+conti);
+
+           Console.WriteLine("la cantidad de pares positivos "+contp);
+
+       }
+
+   }
+
+}
